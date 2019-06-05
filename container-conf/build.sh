@@ -10,6 +10,10 @@ build_vars() {
     build_docker_cmd='["'"$sirepo_tini_file"'", "--", "'"$sirepo_boot"'"]'
 }
 
+build_as_root() {
+    build_yum install postgresql-devel
+}
+
 build_as_run_user() {
     cd "$build_guest_conf"
     sirepo_boot_init
